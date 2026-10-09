@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stashbar — Copy it. Stash it. Find it.</title>
+<meta name="description" content="A menu-bar vault for every link you copy. Trackers stripped, one keystroke away. Free for macOS.">
+<meta property="og:title" content="Stashbar — Copy it. Stash it. Find it.">
+<meta property="og:description" content="A menu-bar vault for every link you copy. Trackers stripped, one keystroke away.">
+<meta property="og:image" content="/assets/app-icon-512.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/app-icon-512.png">
+<link rel="preload" href="/assets/GeistMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/GeistMono-Medium.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav" id="nav">
+    <a class="brand" href="/"><span class="pin"></span>Stashbar</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false" onclick="const n=document.getElementById('nav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span class="i i-menu" style="width:20px;height:20px"></span></button>
+    <nav class="nav-links" aria-label="Main">
+      <a href="#how">How it works</a>
+      <a href="/privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="/help">Help</a>
+    </nav>
+    <a class="btn btn-dark nav-dl" href="/download"><span class="i i-download"></span>Download</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1 class="hd h80">Copy it. Stash it. Find it.</h1>
+        <p class="lead" style="max-width:500px">A menu-bar vault for every link you copy. Trackers stripped, one keystroke away.</p>
+        <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+          <a class="btn btn-dark btn-lg" href="/download"><span class="i l-apple" style="width:18px;height:18px"></span>Download for Mac</a>
+          <span class="hero-note">Free · macOS 14 Sonoma or later · Apple silicon &amp; Intel</span>
+        </div>
+      </div>
+      <div class="popover-shot" aria-hidden="true">
+        <div class="clip-card">
+          <div class="clip-meta"><span class="i l-x" style="width:12px;height:12px;background:#fff"></span><span>ON YOUR CLIPBOARD</span>⌥S</div>
+          <div class="clip-title">Menu bar apps are having a moment — a thread</div>
+          <div class="stash-btn"><span class="pin"></span>Stash it</div>
+        </div>
+        <div class="row sel"><div class="tile"><span class="i l-youtube" style="width:15px;height:15px;background:#fff"></span></div><div class="t"><div class="t1">A talk on typographic rhythm in interfaces</div><div class="t2">youtube.com · 2h</div></div></div>
+        <div class="row"><div class="tile"><span class="i l-github" style="width:15px;height:15px;background:#fff"></span></div><div class="t"><div class="t1">swift-collections: ordered sets, deques</div><div class="t2">github.com · 4h</div></div></div>
+        <div class="row"><div class="tile"><span class="i l-figma" style="width:15px;height:15px;background:#fff"></span></div><div class="t"><div class="t1">Variables &amp; modes: a practical guide</div><div class="t2">figma.com · Yday</div></div></div>
+        <div class="row"><div class="tile"><span class="i l-stripe" style="width:15px;height:15px;background:#fff"></span></div><div class="t"><div class="t1">How we think about idempotency</div><div class="t2">stripe.com · Mon</div></div></div>
+      </div>
+    </section>
+
+    <section class="logos" aria-label="Recognised sites">
+      <span class="cap" style="white-space:nowrap">RECOGNISES THE SITES YOU SAVE</span>
+      <div class="logos-row">
+        <span class="i l-x" title="X"></span><span class="i l-youtube" title="YouTube"></span><span class="i l-github" title="GitHub"></span>
+        <span class="i l-figma" title="Figma"></span><span class="i l-stripe" title="Stripe"></span><span class="i l-reddit" title="Reddit"></span>
+        <span class="i l-medium" title="Medium"></span><span class="i l-notion" title="Notion"></span><span class="i l-apple" title="Apple"></span>
+      </div>
+    </section>
+
+    <section class="section" id="how">
+      <div class="section-head">
+        <h2 class="hd h44" style="max-width:620px">Three keys. Zero lost links.</h2>
+        <p class="body16" style="max-width:340px">No extension, no new tab. It lives next to your clock and works in every app.</p>
+      </div>
+      <div class="steps">
+        <div class="step"><div class="step-top"><span class="cap" style="font-size:13px">01</span><span class="keycap">⌘C</span></div><h3 class="hd h28">Copy a link</h3><p class="body14">From Safari, Slack, X, anywhere. Watched locally, never uploaded.</p></div>
+        <div class="step"><div class="step-top"><span class="cap" style="font-size:13px">02</span><span class="keycap">⌥S</span></div><h3 class="hd h28">Press ⌥S</h3><p class="body14">Popover opens with the link ready. Return stashes it, trackers gone.</p></div>
+        <div class="step"><div class="step-top"><span class="cap" style="font-size:13px">03</span><span class="keycap">⌘E</span></div><h3 class="hd h28">Find it later</h3><p class="body14">Search the popover or open the canvas to browse every link as a card.</p></div>
+      </div>
+      <div class="bento">
+        <div class="stat"><span class="i i-shield"></span><div style="display:flex;flex-direction:column;gap:8px"><div class="stat-num">44</div><p style="font-size:14px;line-height:1.45;color:#a3a2a1">tracking parameters stripped before saving — utm_, fbclid, si and more. Edit the list anytime.</p></div></div>
+        <div class="modes">
+          <div style="display:flex;flex-direction:column;gap:12px"><h3 class="hd h28">Guest or signed in. Switch anytime.</h3><p class="body14">Start with nothing. Sign in with Apple or Google later and every link comes with you.</p></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="mode mode-guest"><span class="i i-drive"></span><span>Guest</span><small>this Mac</small></div>
+            <div class="mode mode-signed"><span class="i i-cloud"></span><span>Signed in</span><small style="color:var(--ink)">every Mac</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="install" style="padding-top:0">
+      <div class="section-head">
+        <h2 class="hd h44" style="max-width:620px">Installed in a minute.</h2>
+        <p class="body16" style="max-width:380px">Stashbar is an independent app, so macOS asks you to confirm it once.</p>
+      </div>
+      <div class="install">
+        <div class="card"><span class="n">01</span><h3 class="hd h18">Download &amp; drag</h3><p class="body14">Open <code class="inline">Stashbar.dmg</code> and drag Stashbar into Applications.</p></div>
+        <div class="card"><span class="n">02</span><h3 class="hd h18">Allow it once</h3><p class="body14">Open Stashbar. If macOS says it can’t verify the developer, go to System Settings → Privacy &amp; Security and click <b style="font-weight:500;color:var(--ink)">Open Anyway</b>.</p></div>
+        <div class="card"><span class="n">03</span><h3 class="hd h18">Or use Terminal</h3><p class="body14">One command clears the quarantine flag:</p>
+          <div class="codebox"><code id="xattr">xattr -cr /Applications/Stashbar.app</code><button class="copy-btn" aria-label="Copy command" onclick="navigator.clipboard.writeText(document.getElementById('xattr').textContent);this.innerHTML='<span class=&quot;i i-check&quot;></span>'"><span class="i i-copy"></span></button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="faq-left">
+        <h2 class="hd h44" style="color:#fff">Good questions.</h2>
+        <a class="btn btn-accent btn-md" href="/download"><span class="i i-download" style="width:17px;height:17px"></span>Download .dmg</a>
+      </div>
+      <div class="faq-grid">
+        <div class="qa"><h3>Is it free?</h3><p>Yes. Download, drag to Applications, done.</p></div>
+        <div class="qa"><h3>Do you read my clipboard?</h3><p>Only to spot URLs, and only on your Mac. Nothing is uploaded unless you stash it.</p></div>
+        <div class="qa"><h3>What if I delete the app?</h3><p>Guests lose their links. Signed-in users get them all back.</p></div>
+        <div class="qa"><h3>Which Macs?</h3><p>macOS 14 Sonoma or later, Apple silicon and Intel.</p></div>
+        <div class="qa"><h3>Why does macOS warn me?</h3><p>Stashbar isn’t notarised by Apple yet. See <a href="#install">Install</a> for the one-time fix.</p></div>
+        <div class="qa"><h3>Can I export my links?</h3><p>Anytime — JSON, Markdown or browser bookmarks, from Settings → Data.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="/"><span class="pin"></span>Stashbar</a>
+    <nav><a href="/privacy">Privacy</a><a href="/help">Help</a><a href="/feedback">Feedback</a><a href="https://github.com/sajidur7/stash-bar/releases">Changelog</a><a href="https://github.com/sajidur7/stash-bar">GitHub</a></nav>
+    <span>© 2026 Stashbar</span>
+  </footer>
+</div>
+</body>
+</html>

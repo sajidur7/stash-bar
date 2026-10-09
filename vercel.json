@@ -1,0 +1,19 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "node web/scripts/write-config.mjs",
+  "outputDirectory": "web",
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/download", "destination": "https://github.com/sajidur7/stash-bar/releases/latest/download/Stashbar.dmg", "permanent": false },
+    { "source": "/changelog", "destination": "https://github.com/sajidur7/stash-bar/releases", "permanent": false },
+    { "source": "/welcome", "destination": "/help", "permanent": false }
+  ],
+  "headers": [
+    { "source": "/assets/(.*)", "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }] },
+    { "source": "/(.*)", "headers": [
+      { "key": "X-Content-Type-Options", "value": "nosniff" },
+      { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+    ] }
+  ]
+}

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help & keyboard guide · Stashbar</title>
+<meta name="description" content="Every Stashbar shortcut, plus answers to common questions.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preload" href="/assets/GeistMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav nav-bordered">
+    <a class="brand" href="/"><span class="pin"></span>Stashbar</a>
+    <nav class="tabs" aria-label="Support"><a href="/help" class="on">Help</a><a href="/feedback">Feedback</a><a href="/privacy">Privacy</a></nav>
+    <a class="btn btn-dark nav-dl" href="/download" style="height:40px"><span class="i i-download" style="width:14px;height:14px"></span>Download</a>
+  </header>
+  <main>
+    <section class="page-hero">
+      <span class="kicker">HELP &amp; KEYBOARD GUIDE</span>
+      <h1 class="hd h56" style="max-width:760px">Everything is a keystroke away.</h1>
+      <p class="body16">Stashbar is built to be used without the mouse. Here’s every shortcut, plus answers to the questions we get most.</p>
+    </section>
+    <label class="searchbar"><span class="i i-search"></span><input id="q" type="search" placeholder="Search help" aria-label="Search help" autocomplete="off"><span class="kc">⌘</span><span class="kc">K</span></label>
+    <section class="keys">
+      <div class="keylist"><span class="cap11" style="padding-bottom:10px">GLOBAL · WORKS IN ANY APP</span>
+        <div class="keyrow" data-q="open stashbar"><span>Open Stashbar</span><div class="k"><span class="kc">⌥</span><span class="kc">S</span></div></div>
+        <div class="keyrow" data-q="stash clipboard instantly"><span>Stash clipboard instantly</span><div class="k"><span class="kc">⌥</span><span class="kc">⇧</span><span class="kc">S</span></div></div>
+      </div>
+      <div class="keylist"><span class="cap11" style="padding-bottom:10px">INSIDE STASHBAR</span>
+        <div class="keyrow" data-q="open canvas"><span>Open canvas</span><div class="k"><span class="kc">⌘</span><span class="kc">E</span></div></div>
+        <div class="keyrow" data-q="add a link"><span>Add a link</span><div class="k"><span class="kc">⌘</span><span class="kc">N</span></div></div>
+        <div class="keyrow" data-q="stash link / copy selected"><span>Stash link / copy selected</span><div class="k"><span class="kc">↩</span></div></div>
+        <div class="keyrow" data-q="open in browser"><span>Open in browser</span><div class="k"><span class="kc">⌘</span><span class="kc">↩</span></div></div>
+        <div class="keyrow" data-q="pin / unpin"><span>Pin / unpin</span><div class="k"><span class="kc">⌘</span><span class="kc">P</span></div></div>
+        <div class="keyrow" data-q="archive link"><span>Archive link</span><div class="k"><span class="kc">⌘</span><span class="kc">⌫</span></div></div>
+        <div class="keyrow" data-q="copy clean url"><span>Copy clean URL</span><div class="k"><span class="kc">⌘</span><span class="kc">⇧</span><span class="kc">C</span></div></div>
+        <div class="keyrow" data-q="settings"><span>Settings</span><div class="k"><span class="kc">⌘</span><span class="kc">,</span></div></div>
+      </div>
+    </section>
+    <p class="empty-search" id="none">No help matches that. Try “sync”, “shortcut” or “clipboard”.</p>
+    <section class="topics">
+      <h2 class="hd h28">Popular topics</h2>
+      <div class="topic-grid">
+        <div class="topic" data-q="stashbar isn’t spotting links clipboard watch"><span class="i i-clip"></span><b>Stashbar isn’t spotting links</b><p>Check Settings → General → Watch clipboard for links. Stashbar only offers web addresses, and skips links you’ve already stashed.</p></div>
+        <div class="topic" data-q="change the shortcut hotkey option s keyboard"><span class="i i-kbd"></span><b>Change the ⌥S shortcut</b><p>Settings → Shortcuts. Click the keys and press a new combo. Add ⇧ to it to stash instantly.</p></div>
+        <div class="topic" data-q="links not syncing sync account offline"><span class="i i-refresh"></span><b>Links not syncing</b><p>Make sure you’re signed in on both Macs with the same Apple or Google account. Settings → Account → Sync now forces a sync.</p></div>
+        <div class="topic" data-q="macos can't verify developer open anyway gatekeeper install damaged"><span class="i i-shield"></span><b>“Can’t verify the developer”</b><p>System Settings → Privacy &amp; Security → Open Anyway. Or run <code class="inline">xattr -cr /Applications/Stashbar.app</code> once.</p></div>
+        <div class="topic" data-q="import bookmarks safari chrome arc firefox export"><span class="i i-download"></span><b>Import bookmarks</b><p>Export bookmarks as HTML from your browser, then Settings → Data &amp; privacy → Import.</p></div>
+        <div class="topic" data-q="guest sign in move links account backup"><span class="i i-cloud"></span><b>From guest to account</b><p>Sign in from Settings → Account. Every link on this Mac moves to your account — nothing gets lost.</p></div>
+      </div>
+      <div class="cta-dark"><span class="i i-msg" style="width:20px;height:20px"></span><span>Still stuck? We reply within a day.</span><a class="btn btn-accent" href="/feedback" style="height:40px">Send feedback</a></div>
+    </section>
+  </main>
+  <footer class="page-footer"><span>© 2026 Stashbar</span><a href="/">stashbar · home</a></footer>
+</div>
+<script>
+  const q = document.getElementById('q');
+  const items = [...document.querySelectorAll('[data-q]')];
+  q.addEventListener('input', () => {
+    const v = q.value.trim().toLowerCase();
+    let shown = 0;
+    items.forEach(el => { const ok = !v || el.dataset.q.includes(v) || el.textContent.toLowerCase().includes(v); el.style.display = ok ? '' : 'none'; if (ok) shown++; });
+    document.getElementById('none').style.display = shown ? 'none' : 'block';
+  });
+  addEventListener('keydown', e => { if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); q.focus(); } });
+</script>
+</body>
+</html>

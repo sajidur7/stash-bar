@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Send feedback · Stashbar</title>
+<meta name="description" content="Bug, idea or a thank-you — tell the people who build Stashbar.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preload" href="/assets/GeistMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav nav-bordered">
+    <a class="brand" href="/"><span class="pin"></span>Stashbar</a>
+    <nav class="tabs" aria-label="Support"><a href="/help">Help</a><a href="/feedback" class="on">Feedback</a><a href="/privacy">Privacy</a></nav>
+    <a class="btn btn-dark nav-dl" href="/download" style="height:40px"><span class="i i-download" style="width:14px;height:14px"></span>Download</a>
+  </header>
+  <main>
+    <section class="page-hero">
+      <span class="kicker">SEND FEEDBACK</span>
+      <h1 class="hd h56" style="max-width:760px">Tell us what to fix next.</h1>
+      <p class="body16">Bug, idea or a thank-you. Every message is read by the people who build Stashbar.</p>
+    </section>
+    <section class="form-wrap">
+      <form class="form" id="fb" novalidate>
+        <div class="field"><span class="cap11">WHAT KIND?</span>
+          <div class="kinds" role="group" aria-label="Kind">
+            <button type="button" class="kind" data-kind="bug" aria-pressed="true">Bug</button>
+            <button type="button" class="kind" data-kind="idea" aria-pressed="false">Idea</button>
+            <button type="button" class="kind" data-kind="question" aria-pressed="false">Question</button>
+            <button type="button" class="kind" data-kind="love" aria-pressed="false">Love it</button>
+          </div>
+        </div>
+        <label class="field"><span class="cap11">WHAT HAPPENED?</span>
+          <textarea id="msg" maxlength="5000" required placeholder="When I copy a link from Slack, the popover shows the Slack redirect URL instead of the real page."></textarea></label>
+        <div class="two">
+          <label class="field"><span class="cap11">EMAIL · FOR A REPLY</span><input class="input" id="email" type="email" maxlength="320" placeholder="you@example.com" autocomplete="email"></label>
+          <div class="field"><span class="cap11">ATTACH</span><label class="check"><input type="checkbox" id="env" checked>Browser &amp; system info</label></div>
+        </div>
+        <button class="btn btn-accent btn-md" type="submit" style="align-self:flex-start"><span class="i i-send"></span>Send feedback</button>
+        <p class="form-status" id="status" role="status"></p>
+      </form>
+      <aside class="side">
+        <div class="card dark"><span class="big">&lt; 24h</span><span style="color:#a3a2a1">Typical reply time, weekdays.</span></div>
+        <a class="card soft" href="https://github.com/sajidur7/stash-bar/issues/new"><span class="i l-github" style="width:20px;height:20px"></span><span style="font-size:14px">Prefer GitHub?</span><span class="muted">Open an issue on the public repo.</span></a>
+        <div class="card line"><span style="font-size:14px">We never include</span><span class="muted">Your saved links or clipboard, unless you paste them in yourself.</span></div>
+      </aside>
+    </section>
+  </main>
+  <footer class="page-footer"><span>© 2026 Stashbar</span><a href="/">stashbar · home</a></footer>
+</div>
+<script src="/config.js"></script>
+<script src="/assets/feedback.js"></script>
+</body>
+</html>

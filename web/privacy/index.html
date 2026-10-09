@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy · Stashbar</title>
+<meta name="description" content="Your links are yours. What Stashbar stores, and what it never does.">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="preload" href="/assets/GeistMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="nav nav-bordered">
+    <a class="brand" href="/"><span class="pin"></span>Stashbar</a>
+    <nav class="tabs" aria-label="Support"><a href="/help">Help</a><a href="/feedback">Feedback</a><a href="/privacy" class="on">Privacy</a></nav>
+    <a class="btn btn-dark nav-dl" href="/download" style="height:40px"><span class="i i-download" style="width:14px;height:14px"></span>Download</a>
+  </header>
+  <main>
+    <section class="page-hero">
+      <span class="kicker">PRIVACY POLICY · UPDATED OCT 2026</span>
+      <h1 class="hd h56" style="max-width:760px">Your links are yours.</h1>
+      <p class="body16">The short version: we don’t sell data, we don’t read your clipboard off your Mac, and guests never touch our servers.</p>
+    </section>
+    <section class="policy">
+      <nav class="toc" aria-label="Sections">
+        <a href="#glance" class="on">At a glance</a><a href="#store">What we store</a><a href="#clipboard">Clipboard</a><a href="#signin">Sign in</a><a href="#analytics">Analytics</a><a href="#delete">Deleting data</a><a href="#contact">Contact</a>
+      </nav>
+      <div>
+        <div class="glance" id="glance">
+          <div><span class="i i-drive" style="width:18px;height:18px"></span><span>Guests</span><p>Everything stays on your Mac.</p></div>
+          <div><span class="i i-shield" style="width:18px;height:18px"></span><span>No selling</span><p>Never shared or sold. Ever.</p></div>
+          <div><span class="i i-trash" style="width:18px;height:18px"></span><span>One click</span><p>Delete your account anytime.</p></div>
+        </div>
+        <article class="clause" id="store"><span class="n">01</span><div><h2>What we store</h2><p>When signed in: the links you stash (URL, title, tags, notes, pinned/archived state), your email and name from Apple or Google, your avatar if you upload one, and the names of the Macs you use Stashbar on. As a guest, nothing leaves your Mac.</p></div></article>
+        <article class="clause" id="clipboard"><span class="n">02</span><div><h2>Your clipboard</h2><p>Stashbar checks the clipboard for web addresses on your Mac only. Nothing you copy is uploaded unless you choose to stash it. To show a page title, Stashbar fetches the page you copied, directly from your Mac.</p></div></article>
+        <article class="clause" id="signin"><span class="n">03</span><div><h2>Sign in</h2><p>Sign-in is handled by Apple or Google through our backend provider (Supabase). We never see your password. Your data is stored with row-level security, so only your account can read your links.</p></div></article>
+        <article class="clause" id="analytics"><span class="n">04</span><div><h2>Analytics</h2><p>This version of Stashbar collects no analytics and no crash reports. This website uses no trackers or cookies.</p></div></article>
+        <article class="clause" id="delete"><span class="n">05</span><div><h2>Deleting your data</h2><p>Settings → Account → Delete account removes your account, links, profile and devices from our servers immediately, and from your other Macs the next time they sync.</p></div></article>
+        <div class="contact" id="contact"><span class="i i-mail" style="width:18px;height:18px"></span><span>Questions about your data?</span><a href="/feedback">Send us a message</a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="page-footer"><span>© 2026 Stashbar</span><a href="/">stashbar · home</a></footer>
+</div>
+<script>
+  const links = [...document.querySelectorAll('.toc a')];
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle('on', a.getAttribute('href') === '#' + e.target.id)); }), { rootMargin: '0px 0px -70% 0px' });
+  links.forEach(a => { const t = document.querySelector(a.getAttribute('href')); if (t) obs.observe(t); });
+</script>
+</body>
+</html>
