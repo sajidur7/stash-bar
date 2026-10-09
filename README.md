@@ -10,7 +10,7 @@ This repo has three parts:
 | `web/` | The landing page, plus the help, feedback and privacy pages. Static and deployed on Vercel |
 | `supabase/` | The database schema for sign-in, sync, profiles, devices and feedback |
 
-`.github/workflows/release.yml` builds and tests the app on every push. Pushing a `v*` tag also builds **Stashbar.dmg** and attaches it to a GitHub Release. The website's **Download** button goes to `/download`, which redirects to the newest release's DMG.
+`.github/workflows/release.yml` builds and tests the app on every push. When `main` has a version number that has no release yet, the workflow publishes a GitHub Release `v<version>` with **Stashbar.dmg** attached. To ship an update, bump `CFBundleShortVersionString` in `app/Resources/Info.plist` and push. Pushing a `v*` tag also works. The website's **Download** button goes to `/download`, which redirects to the newest release's DMG.
 
 ---
 
@@ -18,10 +18,7 @@ This repo has three parts:
 
 ### 1. Publish the first DMG
 1. **Make the repo public.** Visitors download the DMG from GitHub Releases, which only works without a login on a public repo.
-2. Tag a release:
-   ```bash
-   git tag v2.0.0 && git push origin v2.0.0
-   ```
+2. Push to `main`. The first push publishes **v2.0.0**, the version in `app/Resources/Info.plist`.
 3. Wait for **Actions → Build & release** to finish (about 5 minutes). A release with `Stashbar.dmg` appears under **Releases**.
 
 ### 2. Deploy the website on Vercel
@@ -43,7 +40,7 @@ Without this step, the app runs in guest mode only. The sign-in buttons explain 
    - `SUPABASE_URL`: `https://<project>.supabase.co`
    - `SUPABASE_ANON_KEY`: Project Settings → API → `anon` `public` key
    - Optional variable `WEBSITE_URL`: your Vercel URL, used by the Help / Feedback / Privacy links in the app.
-6. Tag a new release (`v2.0.1`). DMGs built from then on include sign-in.
+6. Bump the version to `2.0.1` in `app/Resources/Info.plist` and push. DMGs built from then on include sign-in.
 
 ---
 
